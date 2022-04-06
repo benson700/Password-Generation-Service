@@ -27,7 +27,7 @@
     - containerd.io
 - name: add user to docker group
   user:
-    name: agray
+    name: metagovernor
     groups: docker
     append: yes
 - name: install docker pip package
