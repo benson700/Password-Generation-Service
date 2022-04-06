@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.3"
 
 services:
 
@@ -28,51 +28,25 @@ services:
 
       - character-net
  
-  mysql:
-
-    container_name: mysql
-
-    image: benson700/password-db:latest
-
-    build: ./password-db
-
-    environment:
-
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-
-      MYSQL_DATABASE: passworddb
-
-    volumes:
-
-      - type: volume
-
-        source: characters-vol
-
-        target: /var/lib/mysql
+  
 
     networks:
 
       - "password-net"
 
-  frontend:
+  front-end:
 
-    container_name: frontend
+    container_name: front-end
 
-    image: benson700/frontend:latest
+    image: benson700/front-end:latest
 
-    build: ./frontend
+    build: ./front-end
 
     environment:
 
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-    ports:
 
-      - published: 80
-
-        target: 5000
-
-        protocol: tcp
 
     networks:
 

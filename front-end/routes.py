@@ -1,15 +1,18 @@
-from aiohttp import request
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template', static_folder='static')
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def password_length():
     length = request.args.get('password-length')
+    print(length)
+
     # do something
-    return render_template('template/index.html')
+    # value captured from the frontend is stored in variable - length
+
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='5001')
+    app.run(debug=True, host='0.0.0.0')
