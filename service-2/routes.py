@@ -14,8 +14,7 @@ def random_num():
  
    random_num = ''.join(["{}".format(randint(0, digits)) for num in range(0, digits)])
  
-   requests.post(url='http://service-04:5000/pass',
-                       data={'random_num': random_num})
+
  
    return jsonify(random_num=random_num)
       

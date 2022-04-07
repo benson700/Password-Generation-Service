@@ -15,8 +15,7 @@ def random_char():
    digits = request.get_json()['length']
    random_char = ''.join(choice(string.ascii_letters) for x in range(digits))
  
-   requests.post(url='http://service-04:5000/pass',
-                       data={'random_char': random_char})
+
  
    return jsonify(random_char=random_char)
        

@@ -7,3 +7,9 @@ COPY . .
 RUN pip3 install -r requirements.txt
 
 ENTRYPOINT ["python3", "routes.py"]
+
+
+#172.24.0.3
+#172.24.0.5
+#172.24.0.2
+#172.24.0.4
